@@ -1,0 +1,3 @@
+[submodule "src/Framework"]
+	path = src/Framework
+	url = https://github.com/Tyler1800/rogueframework.git
