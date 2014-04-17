@@ -1,10 +1,3 @@
-/*
- * make_unique.h
- *
- *  Created on: Oct 8, 2013
- *      Author: tyler
- */
-
 #ifndef MAKE_UNIQUE_H_
 #define MAKE_UNIQUE_H_
 
@@ -22,4 +15,4 @@ std::unique_ptr<T> make_unique(Args&& ...args)
 
 
 
-#endif /* MAKE_UNIQUE_H_ */
+#endif
