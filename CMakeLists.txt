@@ -10,13 +10,18 @@ if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU")
 	list(APPEND CMAKE_CXX_FLAGS "-std=c++11")
 endif()
 
-set(LIBRARIES SDL2)
+include(FindFreetype)
+include_directories(${FREETYPE_INCLUDE_DIR_freetype2})
+include_directories(${FREETYPE_INCLUDE_DIR_ft2build})
+
+set(LIBRARIES SDL2 GL GLEW ${FREETYPE_LIBRARY})
 
 set(CMAKE_BUILD_TYPE DEBUG)
 
 set(PROJECT_BIN_DIR "${CMAKE_BINARY_DIR}/bin")
 
 add_executable(roguelike ${FRAMEWORK_SOURCES} ${SOURCES})
+
 target_link_libraries(roguelike ${LIBRARIES})
 
 if(DEFINED BUILD_TEST_PROGRAMS)
